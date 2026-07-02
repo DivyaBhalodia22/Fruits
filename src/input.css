@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme{
+    --font-red-hat: "Red Hat Display", sans-serif;
+    --color-coral: oklch(0.74 0.17 40.24);
+}
+@layer components{
+    .nav-link{
+        @apply hover:text-sky-500 cursor-pointer mx-2;
+    }
+    .card{
+        @apply bg-sky-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 hover:-translate-y-2 transition;
+    }
+    .btn-primary{
+        @apply bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-xl transition duration-300 cursor-pointer;
+    }
+    .btn-secondary{
+        @apply border-2 border-sky-500 px-6 py-3 rounded-xl dark:hover:bg-sky-950 hover:bg-sky-100 text-sky-500 cursor-pointer;
+    }
+    .btn-theme{
+        @apply rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition cursor-pointer p-2;
+    }
+    .btn-icon{
+        @apply bg-sky-500 hover:bg-sky-600 text-white px-2 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer;
+    }
+    .social-icon{
+        @apply cursor-pointer;
+    }
+}
